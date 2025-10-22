@@ -264,7 +264,7 @@ sudo systemctl restart nginx
 ⬆️ [к оглавлению](#оглавление)
 
 > ⚠️ **Примечание:**  
-> Если Вы используете **вариант 3 - С VPS и docker** то в поле **IP Address** нужно указывать ip сервера, обратной стороны туннеля.
+> Если Вы используете **вариант 2 - С VPS или 3 - С VPS и docker** то в поле **IP Address** нужно указывать ip сервера, обратной стороны туннеля.
 
 В **Network Application** нажимаем:  
 **Settings → Policy Table → Create Net Policy → DNS**
