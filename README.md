@@ -59,22 +59,19 @@
 
 ```mermaid
 flowchart LR
-  %% контейнер (big square)
   subgraph BIG["Big square text"]
     direction TB
-    C(( )):::circle    %% круг внутри контейнера
+    C((circle))
   end
 
-  %% внешний квадрат с текстом ubnt
-  UBNT["ubnt"]:::box
+  UBNT["ubnt"]
 
-  %% стрелка от круга из контейнера к внешнему квадрату
   C -->|passes through| UBNT
 
-  %% стили
   classDef box stroke:#0b5fff,stroke-width:2px,fill:#f0f8ff;
   classDef circle stroke:#ff5500,stroke-width:2px,fill:#fff;
-
+  class C circle
+  class UBNT box
 ```
 
 ---
