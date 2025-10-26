@@ -82,7 +82,7 @@ flowchart LR
 
   UBNT["ubnt update servers"]
 
-  C -->|Тунель| UBNT
+  C -->|Тунель|UBNT
 
   classDef box stroke:#0b5fff,stroke-width:2px,fill:#f0f8ff;
   classDef circle stroke:#ff5500,stroke-width:2px,fill:#fff;
