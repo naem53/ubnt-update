@@ -74,20 +74,20 @@
 
 Настройка завершена.
 ```mermaid
-flowchart LR
-  subgraph BIG["Локальная сеть с устройствами Unify"]
-    direction TB
-    C((VM c nginx))
-  end 
+C4Context
+    title System Context Diagram for E-commerce Platform
 
-  UBNT["ubnt update servers"]
+    Enterprise_Boundary(ecommerce, "E-commerce Platform Boundary") {
+        Person(user, "User", "A customer using the e-commerce platform")
+        System(ecomSystem, "E-commerce Platform", "Manages products, user accounts, orders, etc.")
 
-  C -->|Тунель|UBNT
+        System_Ext(paymentGateway, "Payment Gateway", "Processes payments securely")
+        System_Ext(notificationService, "Notification Service", "Sends notifications to users")
 
-  classDef box stroke:#0b5fff,stroke-width:2px,fill:#f0f8ff;
-  classDef circle stroke:#ff5500,stroke-width:2px,fill:#fff;
-  class C circle
-  class UBNT box 
+        Rel(user, ecomSystem, "Uses")
+        Rel(ecomSystem, paymentGateway, "Processes payments via")
+        Rel(ecomSystem, notificationService, "Notifies users via")
+    }
 ```
 
 ---
