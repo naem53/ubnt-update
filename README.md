@@ -73,26 +73,8 @@
 8. Проверяем работу, как написано [тут](#проверка-работы).
 
 Настройка завершена.
-```mermaid
-flowchart LR
- subgraph LAN["Unifi devices network"]
-    direction TB
-        VM["Виртуальная машина<br>Nginx + VPN клиент<br>9.9.9.9 in /etc/resolv.conf"]
-  end
-    VM -. VPN туннель .-> VPN["VPN"]
 
-    VPN@{ shape: rounded}
-     VM:::host
-    classDef net fill:#e3f2fd,stroke:#42a5f5,stroke-width:2px
-    classDef host fill:#fff,stroke:#555,stroke-width:1px
-    classDef internet fill:#f5f5f5,stroke:#888,stroke-dasharray: 5 5
-    style VM fill:#2962FF,color:#C8E6C9
-    style VPN fill:#FF6D00,color:#C8E6C9
-    style LAN fill:#BBDEFB,color:#2962FF,stroke:#2962FF
-    linkStyle 0 stroke:#FF6D00,fill:none
-
-```
-
+![Схема 1](img/type1.png)
 ---
 <a id="способ-2--с-vps"></a>
 ## ☁️ Способ 2 — С VPS
@@ -112,21 +94,7 @@ flowchart LR
 5. Проверяем работу, как написано [тут](#проверка-работы).
 
 Настройка завершена.
-```mermaid
-flowchart LR
- subgraph LAN["Unifi devices network"]
-    direction TB
-  end
-    LAN -. VPN туннель .-> VPN["VPN + Nginx stream"]
-
-    VPN@{ shape: rounded}
-    classDef net fill:#e3f2fd,stroke:#42a5f5,stroke-width:2px
-    classDef host fill:#fff,stroke:#555,stroke-width:1px
-    classDef internet fill:#f5f5f5,stroke:#888,stroke-dasharray: 5 5
-    style LAN fill:#BBDEFB,color:#2962FF,stroke:#2962FF
-    style VPN fill:#FF6D00,color:#C8E6C9,stroke-width:2px,stroke-dasharray: 2
-    linkStyle 0 stroke:#FF6D00,fill:none
-```
+![Схема 2](img/type2.png)
 
 ---
 <a id="способ-3--с-vps-и-docker"></a>
