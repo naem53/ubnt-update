@@ -112,6 +112,21 @@ flowchart LR
 5. Проверяем работу, как написано [тут](#проверка-работы).
 
 Настройка завершена.
+```mermaid
+flowchart LR
+ subgraph LAN["Unifi devices network"]
+    direction TB
+  end
+    LAN -. VPN туннель .-> VPN["VPN + Nginx stream"]
+
+    VPN@{ shape: rounded}
+    classDef net fill:#e3f2fd,stroke:#42a5f5,stroke-width:2px
+    classDef host fill:#fff,stroke:#555,stroke-width:1px
+    classDef internet fill:#f5f5f5,stroke:#888,stroke-dasharray: 5 5
+    style LAN fill:#BBDEFB,color:#2962FF,stroke:#2962FF
+    style VPN fill:#FF6D00,color:#C8E6C9,stroke-width:2px,stroke-dasharray: 2
+    linkStyle 0 stroke:#FF6D00,fill:none
+```
 
 ---
 <a id="способ-3--с-vps-и-docker"></a>
