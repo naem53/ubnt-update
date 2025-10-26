@@ -57,22 +57,6 @@
 > ⚠️ **Примечание:**
 > Данный способ подойдёт тем, у кого **есть VPS**, и к ней есть доступ по **SSH**.
 
-```mermaid
-flowchart LR
-  subgraph BIG["Big square text"]
-    direction TB
-    C((circle))
-  end
-
-  UBNT["ubnt"]
-
-  C -->|passes through| UBNT
-
-  classDef box stroke:#0b5fff,stroke-width:2px,fill:#f0f8ff;
-  classDef circle stroke:#ff5500,stroke-width:2px,fill:#fff;
-  class C circle
-  class UBNT box
-```
 
 ---
 <a id="способ-1--без-vps-с-туннелем"></a>
@@ -89,6 +73,22 @@ flowchart LR
 8. Проверяем работу, как написано [тут](#проверка-работы).
 
 Настройка завершена.
+```mermaid
+flowchart LR
+  subgraph BIG["Локальная сеть с устройствами Unify"]
+    direction TB
+    C((VM c nginx))
+  end 
+
+  UBNT["ubnt update servers"]
+
+  C -->|Тунель| UBNT
+
+  classDef box stroke:#0b5fff,stroke-width:2px,fill:#f0f8ff;
+  classDef circle stroke:#ff5500,stroke-width:2px,fill:#fff;
+  class C circle
+  class UBNT box 
+```
 
 ---
 <a id="способ-2--с-vps"></a>
