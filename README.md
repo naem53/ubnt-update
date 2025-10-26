@@ -74,20 +74,23 @@
 
 Настройка завершена.
 ```mermaid
-C4Context
-    title System Context Diagram for E-commerce Platform
+flowchart LR
+ subgraph LAN["Unifi devices network"]
+    direction TB
+        VM["Виртуальная машина<br>Nginx + VPN клиент<br>9.9.9.9 in /etc/resolv.conf"]
+  end
+    VM -. VPN туннель .-> VPN["VPN"]
 
-    Enterprise_Boundary(ecommerce, "E-commerce Platform Boundary") {
-        Person(user, "User", "A customer using the e-commerce platform")
-        System(ecomSystem, "E-commerce Platform", "Manages products, user accounts, orders, etc.")
+    VPN@{ shape: rounded}
+     VM:::host
+    classDef net fill:#e3f2fd,stroke:#42a5f5,stroke-width:2px
+    classDef host fill:#fff,stroke:#555,stroke-width:1px
+    classDef internet fill:#f5f5f5,stroke:#888,stroke-dasharray: 5 5
+    style VM fill:#2962FF,color:#C8E6C9
+    style VPN fill:#FF6D00,color:#C8E6C9
+    style LAN fill:#BBDEFB,color:#2962FF,stroke:#2962FF
+    linkStyle 0 stroke:#FF6D00,fill:none
 
-        System_Ext(paymentGateway, "Payment Gateway", "Processes payments securely")
-        System_Ext(notificationService, "Notification Service", "Sends notifications to users")
-
-        Rel(user, ecomSystem, "Uses")
-        Rel(ecomSystem, paymentGateway, "Processes payments via")
-        Rel(ecomSystem, notificationService, "Notifies users via")
-    }
 ```
 
 ---
