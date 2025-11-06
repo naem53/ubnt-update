@@ -116,7 +116,7 @@
 1. Подключаемся по ssh к VPS. Устанавливаем docker (если ещё не установлен) по [инструкции](https://docs.docker.com/engine/install/debian/).
 2. Устанвливаем git.
 ```bash
-apt update && apt install git
+sudo apt update && sudo apt install git
 ```
 3. Клонируем репозиторий, и переходим в склонированный каталог.
 ```bash
@@ -124,7 +124,7 @@ git clone https://github.com/naem53/ubnt-update.git && cd ubnt-update
 ```
 4. Запускаем стрим командой:
 ```bash
-sudo docker compose up -d --build
+sudo docker compose up -d
 ```
 5. Добавляем DNS записи в Unifi, для доменов, которые будут заворачиваться в туннель, как написано [тут](#добавление-dns-записей-в-unifi).
 > ⚠️ **Примечание:**  

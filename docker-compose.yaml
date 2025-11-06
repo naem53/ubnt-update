@@ -1,13 +1,14 @@
 ---
 services:
   ubnt:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    image: ubnt:latest
+    image: nginx:1.28.0-alpine-slim
     hostname: ubnt
     container_name: ubnt
     restart: always
+    volumes:
+      - ./conf/resolv.conf:/etc/resolv.conf:ro
+      - ./conf/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./conf/nginx/stream.d/stream-ubnt.conf:/etc/nginx/stream.d/stream-ubnt.conf:ro
     ports:
       - "443:443/tcp"
     deploy:
